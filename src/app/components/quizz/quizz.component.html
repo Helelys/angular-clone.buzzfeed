@@ -5,16 +5,19 @@
   </div>
 
   <div class="quizz__questions">
-    <h3>Questão Selecionada</h3>
+    <h3>{{questionSelected.question}}</h3>
   </div>
 
   <div class="quizz__options">
-    <button class="quizz__options__btn">
-      optionname
+    <button
+		*ngFor="let option of questionSelected.options"
+		(click)="playerChoose(option.alias)"
+		class="quizz__options__btn">
+      {{option.name}}
     </button>
   </div>
 
-  <div class="quizz__results">
+  <div *ngIf=finished class="quizz__results">
     <h1>O seu resultado é: </h1>
     <p>Resposta Selecionada</p>
   </div>
