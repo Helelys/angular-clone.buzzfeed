@@ -8,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './quizz.component.css'
 })
 export class QuizzComponent {
-
+	title:string = ''
 }
